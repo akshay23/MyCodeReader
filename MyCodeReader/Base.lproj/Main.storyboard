@@ -35,15 +35,28 @@
                                     <action selector="showScanner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2o-eY-cC6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR code value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eiz-5C-ge4">
+                                <rect key="frame" x="87.5" y="409" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9PF-Df-y2U"/>
+                                    <constraint firstAttribute="height" constant="100" id="iVM-T4-eIW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" red="0.24212256639999999" green="0.30909589920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92673643766819513" blue="0.83634679881318386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vd5-Ub-iWG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="55m-ZJ-md6"/>
+                            <constraint firstItem="Eiz-5C-ge4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y2P-er-8Av"/>
                             <constraint firstItem="Vd5-Ub-iWG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fJj-OZ-AU9"/>
+                            <constraint firstItem="Eiz-5C-ge4" firstAttribute="top" secondItem="Vd5-Ub-iWG" secondAttribute="bottom" constant="80" id="iwO-cr-OLc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zUt-pM-Z97"/>
                     <connections>
+                        <outlet property="qrValueLabel" destination="Eiz-5C-ge4" id="2eo-DE-44S"/>
                         <outlet property="scanButton" destination="Vd5-Ub-iWG" id="3Qz-4M-EBS"/>
                     </connections>
                 </viewController>

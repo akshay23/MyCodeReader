@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "42F55F2300170115FE4C081A11F4EA39"
-               BuildableName = "SimpleAlert.framework"
-               BlueprintName = "SimpleAlert"
+               BlueprintIdentifier = "09A62655F66AE53A474D64E42E6E9DF9"
+               BuildableName = "ImagePicker.framework"
+               BlueprintName = "ImagePicker"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "42F55F2300170115FE4C081A11F4EA39"
-            BuildableName = "SimpleAlert.framework"
-            BlueprintName = "SimpleAlert"
+            BlueprintIdentifier = "09A62655F66AE53A474D64E42E6E9DF9"
+            BuildableName = "ImagePicker.framework"
+            BlueprintName = "ImagePicker"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

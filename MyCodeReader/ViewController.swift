@@ -11,15 +11,21 @@ import FlatUIKit
 import FontAwesome_swift
 import AVFoundation
 import QRCodeReader
+import ImagePicker
+import SimpleAlert
 
 class ViewController: UIViewController {
     
     @IBOutlet var scanButton: FUIButton!
-    
+    @IBOutlet var qrValueLabel: UILabel!
+
     lazy var readerVC = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
         $0.reader = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode],
                                  captureDevicePosition: .back)
     })
+    
+    var scannedValue: String?
+    var selectedAssets: [UIImage]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,29 @@ class ViewController: UIViewController {
         naviTitle.backgroundColor = .clear
         naviTitle.textAlignment = .center
         navigationItem.titleView = naviTitle
+        
+        qrValueLabel.numberOfLines = 5
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let _ = scannedValue {
+            let imagePicker = ImagePickerController()
+            imagePicker.delegate = self
+            Configuration.doneButtonTitle = "Upload"
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let value = scannedValue {
+            qrValueLabel.text = value
+        } else {
+            qrValueLabel.text = ""
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +87,7 @@ extension ViewController {
         // Or by using the closure pattern
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
             if let res = result {
-                print("Actually scanned value is \(res.value)")
+                self.scannedValue = res.value
             }
         }
         
@@ -67,7 +96,6 @@ extension ViewController {
         present(readerVC, animated: true, completion: nil)
     } 
 }
-
 
 // MARK: QRCodeReaderViewControllerDelegate
 extension ViewController: QRCodeReaderViewControllerDelegate {
@@ -83,7 +111,37 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
     }
     
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
+        self.scannedValue = nil
         reader.stopScanning()
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: ImagePickerDelegate
+extension ViewController: ImagePickerDelegate {
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        self.selectedAssets = images
+        
+        dismiss(animated: true, completion: {
+            var numOfAssets = 0
+            if let assets = self.selectedAssets {
+                numOfAssets = assets.count
+            }
+            
+            let alert = AlertController(title: "Number of selected assets", message: "\(numOfAssets)", style: .alert)
+            alert.addAction(AlertAction(title: "OK", style: .ok))
+            self.present(alert, animated: true, completion: nil)
+        })
+        
+    
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        self.scannedValue = nil
         dismiss(animated: true, completion: nil)
     }
 }

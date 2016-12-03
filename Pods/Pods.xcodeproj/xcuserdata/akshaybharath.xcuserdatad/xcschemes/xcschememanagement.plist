@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImagePicker-ImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MyCodeReader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +57,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>171A1B7FAC7FFEB1A40FE9150D91D484</key>
+		<key>09A62655F66AE53A474D64E42E6E9DF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>319E3BBE24145FC21B8E142EE8C3920F</key>
+		<key>1264DC0FDB26A7035280E0C2A311E346</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3317A5A259B15A6F05E073B111F914F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BFF9F651824EF6D7159B996DAA71D25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42F55F2300170115FE4C081A11F4EA39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6C335AC9BE0C7B742FF92BE47F811C9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C74D47B051BF84CA30E0723F127F42AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C762ECEB55DC3888E4B78A158A91D46C</key>
+		<key>D1C0598293992B863219F9551C9400BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

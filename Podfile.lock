@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.2.0)
   - FlatUIKit (1.6.2)
   - FontAwesome.swift (1.0.0)
+  - ImagePicker (2.0.0)
   - QRCodeReader.swift (7.2.0)
   - SimpleAlert (2.0.1)
   - SwiftyJSON (3.1.3)
@@ -10,6 +11,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - FlatUIKit
   - FontAwesome.swift
+  - ImagePicker
   - QRCodeReader.swift (~> 7.2.0)
   - SimpleAlert
   - SwiftyJSON
@@ -18,10 +20,11 @@ SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   FontAwesome.swift: 2d32a3d62195343c2004b7c9043294ed2948553a
+  ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
   QRCodeReader.swift: 2ddf74993243106dd2be5cf9f6e13c7a3e9a2d00
   SimpleAlert: 383d1197df2e7b70b9bef5771f3632979c1aadae
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: ba525dfcfd79440ab4a8714dff25146518a07bb2
+PODFILE CHECKSUM: 90f041bec58582b500b7e8e2155a7a2a43b48ed1
 
 COCOAPODS: 1.1.1

@@ -8,4 +8,5 @@ target 'MyCodeReader' do
   pod 'FontAwesome.swift'
   pod 'SimpleAlert'
   pod 'FlatUIKit'
+  pod 'ImagePicker'
 end

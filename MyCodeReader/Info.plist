@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need to access your location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -30,6 +32,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Need to use your camera to scan the actual QR code</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Need to access your media library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need to access your photo library</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
