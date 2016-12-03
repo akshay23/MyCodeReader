@@ -13,6 +13,7 @@
 		1953BBA81DF32FDF00F411B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1953BBA71DF32FDF00F411B7 /* Assets.xcassets */; };
 		1953BBAB1DF32FDF00F411B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1953BBA91DF32FDF00F411B7 /* LaunchScreen.storyboard */; };
 		197F6FEE1DF3531C00533842 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197F6FED1DF3531C00533842 /* Backend.swift */; };
+		197F6FF21DF35FD900533842 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197F6FF11DF35FD900533842 /* GalleryView.swift */; };
 		9E5CB06632E647D9EBE809E4 /* Pods_MyCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59574CC786F258BD1397D611 /* Pods_MyCodeReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		1953BBAA1DF32FDF00F411B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1953BBAC1DF32FDF00F411B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		197F6FED1DF3531C00533842 /* Backend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		197F6FF11DF35FD900533842 /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		19A358041DF337F2009AE9C1 /* MyCodeReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyCodeReader-Bridging-Header.h"; sourceTree = "<group>"; };
 		59574CC786F258BD1397D611 /* Pods_MyCodeReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCodeReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D9CAA186AD96F2D69AB1AE /* Pods-MyCodeReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCodeReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCodeReader/Pods-MyCodeReader.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				1953BBAC1DF32FDF00F411B7 /* Info.plist */,
 				19A358041DF337F2009AE9C1 /* MyCodeReader-Bridging-Header.h */,
 				197F6FED1DF3531C00533842 /* Backend.swift */,
+				197F6FF11DF35FD900533842 /* GalleryView.swift */,
 			);
 			path = MyCodeReader;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				1953BBA31DF32FDF00F411B7 /* ViewController.swift in Sources */,
 				1953BBA11DF32FDF00F411B7 /* AppDelegate.swift in Sources */,
 				197F6FEE1DF3531C00533842 /* Backend.swift in Sources */,
+				197F6FF21DF35FD900533842 /* GalleryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

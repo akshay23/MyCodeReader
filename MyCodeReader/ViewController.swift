@@ -13,6 +13,7 @@ import AVFoundation
 import QRCodeReader
 import ImagePicker
 import SimpleAlert
+import Photos
 
 class ViewController: UIViewController {
     
@@ -25,7 +26,9 @@ class ViewController: UIViewController {
     })
     
     var scannedValue: String?
-    var selectedAssets: [UIImage]?
+    var selectedAssets: [PHAsset]?
+    var selectedImages: [UIImage]?
+    var galleryView: GalleryView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,7 @@ class ViewController: UIViewController {
         navigationItem.titleView = naviTitle
         
         qrValueLabel.numberOfLines = 5
+        qrValueLabel.text = ""
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,8 +70,6 @@ class ViewController: UIViewController {
         
         if let value = scannedValue {
             qrValueLabel.text = value
-        } else {
-            qrValueLabel.text = ""
         }
     }
 
@@ -84,13 +86,6 @@ extension ViewController {
         // By using the delegate pattern
         readerVC.delegate = self
         
-        // Or by using the closure pattern
-        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            if let res = result {
-                self.scannedValue = res.value
-            }
-        }
-        
         // Presents the readerVC as modal form sheet
         readerVC.modalPresentationStyle = .formSheet
         present(readerVC, animated: true, completion: nil)
@@ -100,6 +95,7 @@ extension ViewController {
 // MARK: QRCodeReaderViewControllerDelegate
 extension ViewController: QRCodeReaderViewControllerDelegate {
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
+        scannedValue = result.value
         reader.stopScanning()
         dismiss(animated: true, completion: nil)
     }
@@ -120,11 +116,18 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
 // MARK: ImagePickerDelegate
 extension ViewController: ImagePickerDelegate {
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        dismiss(animated: true, completion: nil)
+        if images.count > 0 {
+            print("Number of assets \(imagePicker.stack.assets.count)")
+            galleryView = GalleryView(frame: view.frame, delegate: self, images: images)
+            imagePicker.view.addSubview(self.galleryView!)
+            galleryView!.didMoveToSuperview()
+        }
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        self.selectedAssets = images
+        selectedAssets = imagePicker.stack.assets
+        selectedImages = images
+        scannedValue = nil
         
         dismiss(animated: true, completion: {
             var numOfAssets = 0
@@ -141,7 +144,18 @@ extension ViewController: ImagePickerDelegate {
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        self.scannedValue = nil
+        scannedValue = nil
+        qrValueLabel.text = ""
         dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: GalleryViewDelegate
+extension ViewController: GalleryViewDelegate {
+    func dissmissGalleryView() {
+        if let gView = galleryView {
+            gView.removeFromSuperview()
+            galleryView = nil
+        }
     }
 }
