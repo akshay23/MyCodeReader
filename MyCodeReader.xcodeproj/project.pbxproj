@@ -12,9 +12,11 @@
 		1953BBA61DF32FDF00F411B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1953BBA41DF32FDF00F411B7 /* Main.storyboard */; };
 		1953BBA81DF32FDF00F411B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1953BBA71DF32FDF00F411B7 /* Assets.xcassets */; };
 		1953BBAB1DF32FDF00F411B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1953BBA91DF32FDF00F411B7 /* LaunchScreen.storyboard */; };
+		9E5CB06632E647D9EBE809E4 /* Pods_MyCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59574CC786F258BD1397D611 /* Pods_MyCodeReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F73239091496A1A47E83AC2 /* Pods-MyCodeReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCodeReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCodeReader/Pods-MyCodeReader.release.xcconfig"; sourceTree = "<group>"; };
 		1953BB9D1DF32FDF00F411B7 /* MyCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1953BBA01DF32FDF00F411B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1953BBA21DF32FDF00F411B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,9 @@
 		1953BBA71DF32FDF00F411B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1953BBAA1DF32FDF00F411B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1953BBAC1DF32FDF00F411B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19A358041DF337F2009AE9C1 /* MyCodeReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyCodeReader-Bridging-Header.h"; sourceTree = "<group>"; };
+		59574CC786F258BD1397D611 /* Pods_MyCodeReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCodeReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D9CAA186AD96F2D69AB1AE /* Pods-MyCodeReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCodeReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCodeReader/Pods-MyCodeReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5CB06632E647D9EBE809E4 /* Pods_MyCodeReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,8 @@
 			children = (
 				1953BB9F1DF32FDF00F411B7 /* MyCodeReader */,
 				1953BB9E1DF32FDF00F411B7 /* Products */,
+				98722CD3D7006619AAA24AA7 /* Pods */,
+				4BF2F27FD2FA26A7D228FC7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +68,26 @@
 				1953BBA71DF32FDF00F411B7 /* Assets.xcassets */,
 				1953BBA91DF32FDF00F411B7 /* LaunchScreen.storyboard */,
 				1953BBAC1DF32FDF00F411B7 /* Info.plist */,
+				19A358041DF337F2009AE9C1 /* MyCodeReader-Bridging-Header.h */,
 			);
 			path = MyCodeReader;
+			sourceTree = "<group>";
+		};
+		4BF2F27FD2FA26A7D228FC7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59574CC786F258BD1397D611 /* Pods_MyCodeReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98722CD3D7006619AAA24AA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7D9CAA186AD96F2D69AB1AE /* Pods-MyCodeReader.debug.xcconfig */,
+				0F73239091496A1A47E83AC2 /* Pods-MyCodeReader.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +97,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1953BBAF1DF32FDF00F411B7 /* Build configuration list for PBXNativeTarget "MyCodeReader" */;
 			buildPhases = (
+				23BFD894D9C8702D832952DA /* [CP] Check Pods Manifest.lock */,
 				1953BB991DF32FDF00F411B7 /* Sources */,
 				1953BB9A1DF32FDF00F411B7 /* Frameworks */,
 				1953BB9B1DF32FDF00F411B7 /* Resources */,
+				5E53F15C758449427A164B76 /* [CP] Embed Pods Frameworks */,
+				69A8A91B8292B5BEF264D040 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +161,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23BFD894D9C8702D832952DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E53F15C758449427A164B76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyCodeReader/Pods-MyCodeReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69A8A91B8292B5BEF264D040 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyCodeReader/Pods-MyCodeReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1953BB991DF32FDF00F411B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -182,6 +259,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +309,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -257,7 +336,9 @@
 		};
 		1953BBB01DF32FDF00F411B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7D9CAA186AD96F2D69AB1AE /* Pods-MyCodeReader.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VRYW4TD62Q;
 				INFOPLIST_FILE = MyCodeReader/Info.plist;
@@ -270,7 +351,9 @@
 		};
 		1953BBB11DF32FDF00F411B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F73239091496A1A47E83AC2 /* Pods-MyCodeReader.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VRYW4TD62Q;
 				INFOPLIST_FILE = MyCodeReader/Info.plist;
@@ -300,6 +383,7 @@
 				1953BBB11DF32FDF00F411B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
