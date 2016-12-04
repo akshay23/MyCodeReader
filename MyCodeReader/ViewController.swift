@@ -14,6 +14,7 @@ import QRCodeReader
 import ImagePicker
 import SimpleAlert
 import Photos
+import MBProgressHUD
 
 class ViewController: UIViewController {
     
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     var selectedAssets: [PHAsset]?
     var selectedImages: [UIImage]?
     var galleryView: GalleryView?
+    var socket: Socket!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +54,7 @@ class ViewController: UIViewController {
         
         qrValueLabel.numberOfLines = 5
         qrValueLabel.text = ""
-        PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+        socket = Socket()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,7 +83,6 @@ class ViewController: UIViewController {
     
     func uploadAssets() {
         print("Upload assets to appservice")
-        
     }
 }
 

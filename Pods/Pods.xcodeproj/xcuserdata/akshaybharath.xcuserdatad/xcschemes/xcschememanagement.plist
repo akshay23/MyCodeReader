@@ -54,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Starscream.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,12 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09A62655F66AE53A474D64E42E6E9DF9</key>
+		<key>05B48080FA793D0E282F513D48866814</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2177046E937840BD15EAD34A18F80357</key>
+		<key>09A62655F66AE53A474D64E42E6E9DF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>624940A9881BBB86BCFEF98E5E533CB8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>663F8A07053F5DD0B6433B454BE3DAB7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6CE075C767E9A331417EE6803F6B8EB8</key>
+		<key>688C1206BD1589381EA901B90AD78AED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7C17DC1E422FCF0E8F967A48C2033FB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>992035524511123C0892FC97E56D664F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -113,6 +118,11 @@
 			<true/>
 		</dict>
 		<key>D88D87F9C08CC6014A19D5865226133B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD2AD8648C5B91582762A58FD484DC08</key>
 		<dict>
 			<key>primary</key>
 			<true/>

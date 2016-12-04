@@ -66,7 +66,7 @@ extension Backend {
         task.resume()
     }
     
-    static func getUploadURL(completion: @escaping () -> ()) {
+    static func getUploadURL() {
         let url = URL(string: "\(baseURLString)\(getUploadURLEndpoint)")
         var urlRequest = URLRequest(url: url!)
         let headerVals = [
@@ -91,8 +91,6 @@ extension Backend {
             } else {
                 print("error=\(error!.localizedDescription)")
             }
-            
-            completion()
         }
         
         task.resume()

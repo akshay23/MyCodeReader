@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192BA9BD1DF4585000553023 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192BA9BC1DF4585000553023 /* Socket.swift */; };
 		1953BBA11DF32FDF00F411B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953BBA01DF32FDF00F411B7 /* AppDelegate.swift */; };
 		1953BBA31DF32FDF00F411B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953BBA21DF32FDF00F411B7 /* ViewController.swift */; };
 		1953BBA61DF32FDF00F411B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1953BBA41DF32FDF00F411B7 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		0F73239091496A1A47E83AC2 /* Pods-MyCodeReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCodeReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCodeReader/Pods-MyCodeReader.release.xcconfig"; sourceTree = "<group>"; };
+		192BA9BC1DF4585000553023 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		1953BB9D1DF32FDF00F411B7 /* MyCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1953BBA01DF32FDF00F411B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1953BBA21DF32FDF00F411B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				19A358041DF337F2009AE9C1 /* MyCodeReader-Bridging-Header.h */,
 				197F6FED1DF3531C00533842 /* Backend.swift */,
 				197F6FF11DF35FD900533842 /* GalleryView.swift */,
+				192BA9BC1DF4585000553023 /* Socket.swift */,
 			);
 			path = MyCodeReader;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				1953BBA31DF32FDF00F411B7 /* ViewController.swift in Sources */,
 				1953BBA11DF32FDF00F411B7 /* AppDelegate.swift in Sources */,
+				192BA9BD1DF4585000553023 /* Socket.swift in Sources */,
 				197F6FEE1DF3531C00533842 /* Backend.swift in Sources */,
 				197F6FF21DF35FD900533842 /* GalleryView.swift in Sources */,
 			);

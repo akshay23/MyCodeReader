@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("Getting new auth token")
             Backend.getOAuthToken() {
-                Backend.getUploadURL() { }
+                print("Getting upload URL")
+                Backend.getUploadURL()
             }
         }
         

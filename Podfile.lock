@@ -6,6 +6,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - QRCodeReader.swift (7.2.0)
   - SimpleAlert (2.0.1)
+  - Starscream (2.0.2)
   - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - QRCodeReader.swift (~> 7.2.0)
   - SimpleAlert
+  - Starscream (~> 2.0.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -26,8 +28,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   QRCodeReader.swift: 2ddf74993243106dd2be5cf9f6e13c7a3e9a2d00
   SimpleAlert: 383d1197df2e7b70b9bef5771f3632979c1aadae
+  Starscream: 6c135a34e0a6e60cedaa0b30db67a4c05cf7cd38
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 973f4e4ee9f39aeda9dbfcef08331fd5f905bcfc
+PODFILE CHECKSUM: a022c7a8ecc2c904ebb940cf0e68e66ce6cc3349
 
 COCOAPODS: 1.1.1
