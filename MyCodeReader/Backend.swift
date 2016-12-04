@@ -7,32 +7,98 @@
 //
 
 import Foundation
-import Alamofire
+import Photos
+import SwiftyJSON
 
-struct Animoto {
-    enum Router: URLRequestConvertible {
-        static let baseURLString = ""
-        static let clientID = ""
-        static let clientSecret = ""
+class Backend {
+    static let clientID = "iphone"
+    static let clientSecret = "iphone2secret"
+    static let baseURLString = "https://qa.animoto.com/appservice"
+    
+    static let OAuthEndpoint = "/oauth/access_token"
+    static let getUploadURLEndpoint = "/assets/upload_url"
+    
+    static var authToken: String?
+    static var uploadURL: String?
+}
+
+extension Backend {
+    static func getOAuthToken(completion: @escaping () -> ()) {
+        let url = URL(string: "\(baseURLString)\(OAuthEndpoint)")
+        var oRequest = URLRequest(url: url!)
+        let authString = "\(clientID):\(clientSecret)"
+        let encoded = authString.data(using: String.Encoding.utf8)!.base64EncodedString()
+        let headerVals = [
+            "Authorization": "Basic \(encoded)",
+            "Accept": "application/vnd.animoto-v4+json",
+            "Content-Type": "application/vnd.animoto-v4+json",
+            "User-Agent": "Simulator (OS 10.0) (MyCodeReader 1.0) (app_service 2.0)"
+        ]
         
-        case authenticate
-        case upload
+        let body = NSMutableDictionary(capacity: 1)
+        body["grant_type"] = "client_credentials"
         
-        func asURLRequest() throws -> URLRequest {
-            let result: (path: String, parameters: Parameters) = {
-                switch self {
-                case .authenticate:
-                    return ("/oauth/access_token", [:])
-                    
-                default:
-                    return ("",[:])
-                }
-            }()
-            
-            let url = try Router.baseURLString.asURL()
-            let urlRequest = URLRequest(url: url.appendingPathComponent(result.path))
-            
-            return try URLEncoding.default.encode(urlRequest, with: result.parameters)
+        do {
+            let json = try JSONSerialization.data(withJSONObject: body, options: [])
+            oRequest.httpBody = json
+            oRequest.httpMethod = "POST"
+            oRequest.allHTTPHeaderFields = headerVals
+        } catch {
+            assertionFailure("Could not serialize json body of request")
         }
+        
+        let task = URLSession.shared.dataTask(with: oRequest) {
+            data, response, error in
+            
+            if let data = data, error == nil {
+                let jsonString = JSON(data: data)
+                if let token = jsonString["access_token"].string {
+                    print("New auth token is \(token)")
+                    Backend.authToken = token
+                }
+            } else {
+                print("error=\(error!.localizedDescription)")
+            }
+            
+            completion()
+        }
+        
+        task.resume()
+    }
+    
+    static func getUploadURL(completion: @escaping () -> ()) {
+        let url = URL(string: "\(baseURLString)\(getUploadURLEndpoint)")
+        var urlRequest = URLRequest(url: url!)
+        let headerVals = [
+            "Authorization": "Basic \(authToken!)",
+            "Accept": "application/vnd.animoto-v4+json",
+            "Content-Type": "application/vnd.animoto-v4+json",
+            "User-Agent": "Simulator (OS 10.0) (MyCodeReader 1.0) (app_service 2.0)"
+        ]
+        
+        urlRequest.httpMethod = "GET"
+        urlRequest.allHTTPHeaderFields = headerVals
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) {
+            data, response, error in
+            
+            if let data = data, error == nil {
+                let jsonString = JSON(data: data)
+                if let url = jsonString["response"]["payload"]["url"].string {
+                    print("Upload URL is \(url)")
+                    Backend.uploadURL = url
+                }
+            } else {
+                print("error=\(error!.localizedDescription)")
+            }
+            
+            completion()
+        }
+        
+        task.resume()
+    }
+    
+    static func uploadAsset(asset: PHAsset) {
+        
     }
 }

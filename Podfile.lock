@@ -3,6 +3,7 @@ PODS:
   - FlatUIKit (1.6.2)
   - FontAwesome.swift (1.0.0)
   - ImagePicker (2.0.0)
+  - MBProgressHUD (1.0.0)
   - QRCodeReader.swift (7.2.0)
   - SimpleAlert (2.0.1)
   - SwiftyJSON (3.1.3)
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - FlatUIKit
   - FontAwesome.swift
   - ImagePicker
+  - MBProgressHUD (~> 1.0.0)
   - QRCodeReader.swift (~> 7.2.0)
   - SimpleAlert
   - SwiftyJSON
@@ -21,10 +23,11 @@ SPEC CHECKSUMS:
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   FontAwesome.swift: 2d32a3d62195343c2004b7c9043294ed2948553a
   ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   QRCodeReader.swift: 2ddf74993243106dd2be5cf9f6e13c7a3e9a2d00
   SimpleAlert: 383d1197df2e7b70b9bef5771f3632979c1aadae
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 90f041bec58582b500b7e8e2155a7a2a43b48ed1
+PODFILE CHECKSUM: 973f4e4ee9f39aeda9dbfcef08331fd5f905bcfc
 
 COCOAPODS: 1.1.1

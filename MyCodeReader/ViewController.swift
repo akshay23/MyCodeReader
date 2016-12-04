@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         
         qrValueLabel.numberOfLines = 5
         qrValueLabel.text = ""
+        PKHUD.sharedHUD.contentView = PKHUDSuccessView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,6 +77,11 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func uploadAssets() {
+        print("Upload assets to appservice")
+        
     }
 }
 
@@ -128,19 +134,11 @@ extension ViewController: ImagePickerDelegate {
         selectedAssets = imagePicker.stack.assets
         selectedImages = images
         scannedValue = nil
+        dismiss(animated: true, completion: nil)
         
-        dismiss(animated: true, completion: {
-            var numOfAssets = 0
-            if let assets = self.selectedAssets {
-                numOfAssets = assets.count
-            }
-            
-            let alert = AlertController(title: "Number of selected assets", message: "\(numOfAssets)", style: .alert)
-            alert.addAction(AlertAction(title: "OK", style: .ok))
-            self.present(alert, animated: true, completion: nil)
-        })
-        
-    
+        if let assets = selectedAssets, assets.count > 0 {
+            uploadAssets()
+        }
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {

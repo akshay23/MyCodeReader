@@ -9,4 +9,5 @@ target 'MyCodeReader' do
   pod 'SimpleAlert'
   pod 'FlatUIKit'
   pod 'ImagePicker'
+  pod 'MBProgressHUD', '~> 1.0.0'
 end
