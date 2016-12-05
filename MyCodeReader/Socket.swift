@@ -11,13 +11,17 @@ import Starscream
 
 class Socket {
     
-    let wsURL = URL(string: "ws://localhost:8080/")
-    var socket: WebSocket!
+    internal let wsURL = URL(string: "ws://echo.websocket.org")
+    internal var socket: WebSocket!
     
     init() {
         socket = WebSocket(url: wsURL!)
         socket.delegate = self
         socket.connect()
+    }
+    
+    func sendMessage(message: String, completion: (() -> ())? = nil) {
+        socket.write(string: message, completion: completion)
     }
 }
 

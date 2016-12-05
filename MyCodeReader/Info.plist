@@ -36,6 +36,11 @@
 	<string>Need to access your media library</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need to access your photo library</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

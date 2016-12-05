@@ -60,11 +60,20 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let _ = scannedValue {
+        if let value = scannedValue {
+            socket.sendMessage(message: value) {
+                DispatchQueue.main.async(execute: {
+                    let imagePicker = ImagePickerController()
+                    imagePicker.delegate = self
+                    Configuration.doneButtonTitle = "Upload"
+                    self.present(imagePicker, animated: true, completion: nil)
+                })
+            }
+        } else {
             let imagePicker = ImagePickerController()
             imagePicker.delegate = self
             Configuration.doneButtonTitle = "Upload"
-            present(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true, completion: nil)
         }
     }
     
@@ -83,6 +92,9 @@ class ViewController: UIViewController {
     
     func uploadAssets() {
         print("Upload assets to appservice")
+        for asset in selectedAssets! {
+            Backend.uploadAsset(asset: asset)
+        }
     }
 }
 
@@ -115,6 +127,7 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
     
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
         self.scannedValue = nil
+        socket.sendMessage(message: "cancelled")
         reader.stopScanning()
         dismiss(animated: true, completion: nil)
     }
@@ -137,14 +150,14 @@ extension ViewController: ImagePickerDelegate {
         scannedValue = nil
         dismiss(animated: true, completion: nil)
         
-        if let assets = selectedAssets, assets.count > 0 {
+        if let images = selectedImages, images.count > 0 {
             uploadAssets()
         }
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         scannedValue = nil
-        qrValueLabel.text = ""
+        socket.sendMessage(message: "cancelled")
         dismiss(animated: true, completion: nil)
     }
 }
